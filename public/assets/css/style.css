@@ -36,24 +36,12 @@ h6 {
     word-wrap: break-word;
     color: #111111;
 }
-h1 {
-    font-size: 37px;
-}
-h2 {
-    font-size: 31px;
-}
-h3 {
-    font-size: 26px;
-}
-h4 {
-    font-size: 21px;
-}
-h5 {
-    font-size: 18px;
-}
-h6 {
-    font-size: 15px;
-}
+h1 { font-size: 37px; }
+h2 { font-size: 31px; }
+h3 { font-size: 26px; }
+h4 { font-size: 21px; }
+h5 { font-size: 18px; }
+h6 { font-size: 15px; }
 
 label {
     display: block;
@@ -64,63 +52,29 @@ input[type=text], input[type=email] {
     font-family: Quando;
     padding: 10px;
     display: block;
-    width: calc( 100% - 24px );
+    width: calc(100% - 24px);
     margin-bottom: 15px;
 }
+
 form .flexbox {
     display: flex;
     align-items: center;
 }
-form span {
-    display: block;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    margin-bottom: 15px;
-    margin-right: 10px;
-    position: relative;
-}
-/* hover */
-form .flexbox:hover span {
-    background-color: #ccc;
-}
-/* checked */
-form .flexbox span.checked {
-    background-color: #2196F3;
-}
-form .flexbox span:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-form .flexbox span.checked:after {
-    display: block;
-}
-.container span.checked:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
+
 label.check {
     display: block;
     width: auto;
     margin-bottom: 15px;
 }
+
 input[type=submit] {
     font-family: Quando;
     text-transform: uppercase;
-    width: calc( 100% - 2px );
+    width: calc(100% - 2px);
     background-color: #B7D2FF;
     border: none;
     color: white;
     padding: 16px 32px;
-    text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
     transition: all 0.5s;
@@ -129,12 +83,10 @@ input[type=submit]:hover {
     background-color: #84B2FF;
 }
 
-
 .container {
     width: 94%;
     margin: 0 auto;
 }
-
 
 /* header and main nav */
 header {
@@ -148,8 +100,6 @@ header nav ul {
     width: 200px;
     margin: 20px auto 40px;
 }
-
-
 
 /* posts */
 article {
@@ -178,8 +128,6 @@ article {
     color: #35c4ce;
 }
 
-
-
 /* footer */
 footer {
     padding: 30px 0;
@@ -197,7 +145,6 @@ footer {
     width: 200px;
     margin: 20px auto;
     text-align: center;
-    vertical-align: middle;
 }
 .footer-social-links {
     padding: 20px 0;
@@ -218,7 +165,7 @@ footer {
     color: #989898;
 }
 
-
+/* RESPONSIVE NAV + LAYOUT */
 @media only screen and (min-width: 650px) {
     .container {
         width: 90%;
@@ -261,6 +208,7 @@ footer {
     .current-menu-item a {
         border-bottom: 2px solid #324360;
     }
+
     /* sub nav */
     header nav ul ul {
         visibility: hidden;
@@ -295,8 +243,6 @@ footer {
         color: #000; 
     }
 
-
-
     /* posts */
     article {
         display: flex;
@@ -317,8 +263,6 @@ footer {
         padding-left: 50px;
     }
 
-
-
     /* footer */
     .footer-social-links a {
         margin: 0 28px;
@@ -330,4 +274,26 @@ footer {
         display: inline;
         font-size: 11px;
     }
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+.custom-checkbox[aria-checked="true"] {
+    background-color: #333;
+}
+
+.custom-checkbox[aria-checked="true"]::after {
+    content: "✓";
 }

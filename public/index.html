@@ -60,7 +60,7 @@
 
                     <div class="post-list-entry">
                         <p>Contact us to learn more!</p>
-                        <form action="/" method="post">
+                        <form action="#" method="get">
                             <label for="fullname">Name</label>
                             <input type="text" id="fullname" name="fullname" required />
                             
@@ -68,9 +68,17 @@
                             <input type="email" id="email" name="email" required />
 
                             <div class="flexbox">
-                                <span></span>
-                                <label class="check">Check Me (required)</label>
+                                <div 
+                                    role="checkbox" 
+                                    tabindex="0" 
+                                    aria-checked="false" 
+                                    id="agree"
+                                    class="custom-checkbox"
+                                ></div>
+
+                                <label for="agree">Check Me (required)</label>
                             </div>
+
 
                             <input type="submit" value="Submit" />
                         </form>
@@ -115,6 +123,22 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script>
+        const box = document.getElementById("agree");
+
+        box.addEventListener("click", () => {
+        const checked = box.getAttribute("aria-checked") === "true";
+        box.setAttribute("aria-checked", !checked);
+        });
+
+        box.addEventListener("keydown", (e) => {
+        if (e.key === " " || e.key === "Enter") {
+            e.preventDefault();
+            const checked = box.getAttribute("aria-checked") === "true";
+            box.setAttribute("aria-checked", !checked);
+        }
+        });
+    </script>
+
 </body>
 </html>
